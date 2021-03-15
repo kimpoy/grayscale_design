@@ -1,0 +1,170 @@
+:root{
+    --color-accent: #e9e7e786;
+    --font-cursive: 'Amita', cursive;
+    --color-primary: #433d3c;
+    --color-primary-dark: rgba(0, 0, 0, 0.89);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+    background: var(--color-accent);
+}
+
+/* * Main Container */
+.container{
+    margin: auto;
+    width: min(90%,70.5rem);
+
+}
+
+/* *Link */
+a{color: var(--color-primary-dark);}
+
+/** Images */
+img{max-width: 100%;}
+
+.main-image{
+    width: 30rem;
+    padding: 2px;
+}
+
+.images{
+    width: 15rem;
+    padding: 2px;
+}
+
+/* * Wrapper */
+.wrapper{
+    display: flex;
+    line-height: 0%;
+    width: fit-content;
+    justify-content: center;/* for firefox cause margin auto is not working !-_- */
+    margin: auto;
+
+
+}
+.img-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-wrapper{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+
+}
+.header-text{
+    line-height: 1em;
+    margin: 1em 0 0 0;
+}
+
+.title-text{
+    line-height: 5em;
+}
+
+.content-text{
+    text-align: center;
+    font-family: var(--font-cursive);
+    font-size: 1.2rem;
+    margin: 0 0 1em 0;
+    line-height: 1.8rem;
+    color: var(--color-primary);
+}
+
+/* * img hover effect */
+
+.img-effect{
+    position: relative;
+    transition: .4s ease-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+.img-effect:hover{
+    /*     transform: translateY(15px); */
+        transform: scale(1.1);
+        z-index: 5;
+}
+    
+.img-effect:hover::before{
+    opacity: 1;
+}
+
+.img-effect::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--color-accent), transparent);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+
+/* *footer */
+.footer-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-title-text{
+    margin: 2em 0 0 0;
+}
+
+/* * Social media icons font size */
+.social-media-icons{
+    display: flex;
+    width: 15%;
+    justify-content: space-around;
+    margin-block: 1.5em;
+}
+
+/* ! Media Query */
+
+/* * for text */
+@media (min-width: 54.75em){
+    .text-wrapper{
+        width: 70%;
+    }
+}
+
+@media (min-width: 74.5em){
+    .text-wrapper{
+        width: 60%;
+    }
+}
+
+/* * for images */
+@media (max-width: 31.875em){
+    .wrapper{
+        flex-direction: column;
+    }
+    .images{
+        width: 30rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
